@@ -17,13 +17,11 @@ const winningCombinations = [
     [2,4,6]
 ]
 
-// Starts the Game
 startGame()
 
-// Sets the inital boardstate
+// Sets the inital boardstate and resets to default
 function startGame() {
     circleTurn = false;
-
     cellElements.forEach(cell => {
         cell.classList.remove(xClass)
         cell.classList.remove(circleClass)
@@ -34,10 +32,10 @@ function startGame() {
     winningMessageElement.classList.remove('show')
 };
 
-// Runs on cell click events
+
 function handleClick(e) {
-    // check whose turn
     cell = e.target;
+    // check whose turn
     const currentClass = circleTurn ? circleClass : xClass
     // place mark
     placeMark(cell, currentClass)
@@ -51,6 +49,7 @@ function handleClick(e) {
     }
     // switch turns
     swapTurns()
+    // swap the hover from x to o and back
     setBoardHoverClass()
 };
 

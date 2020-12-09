@@ -57,21 +57,41 @@ body {
 
 .cell.x::before,
 .cell.x::after {
+    background-color: black;
+}
+
+.board.x .cell:not(.x):not(.circle):hover::before,
+.board.x .cell:not(.x):not(.circle):hover::after {
+    background-color: lightgrey;
+}
+
+.board.x .cell:not(.x):not(.circle):hover::before,
+.board.x .cell:not(.x):not(.circle):hover::after,
+.cell.x::before,
+.cell.x::after {
     content: ' ';
     width: calc(var(--mark-size) * .15);
     height: var(--mark-size);
-    background-color: black;
     position: absolute;
 }
 
+.board.x .cell:not(.x):not(.circle):hover::before,
 .cell.x::before {
     transform: rotate(45deg);
 }
 
+
+.board.x .cell:not(.x):not(.circle):hover::after,
 .cell.x::after {
     transform: rotate(-45deg);
 }
 
+
+
+
+/* Creates the circle */
+.board.circle .cell:not(.x):not(.circle):hover::after,
+.board.circle .cell:not(.x):not(.circle):hover::before,
 .cell.circle::before,
 .cell.circle::after {
     content: '';
@@ -79,12 +99,13 @@ body {
     position: absolute;
 }
 
+.board.circle .cell:not(.x):not(.circle):hover::before,
 .cell.circle::before {
     width: var(--mark-size);
     height: var(--mark-size);
-    background-color: black;
 }
 
+.board.circle .cell:not(.x):not(.circle):hover::after,
 .cell.circle::after {
     width: calc(var(--mark-size) * .7);
     height: calc(var(--mark-size) * .7);

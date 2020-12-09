@@ -56,10 +56,12 @@ body {
 }
 
 .cell.x::before,
-.cell.x::after {
+.cell.x::after,
+.cell.circle::before {
     background-color: black;
 }
 
+.board.circle .cell:not(.x):not(.circle):hover::before,
 .board.x .cell:not(.x):not(.circle):hover::before,
 .board.x .cell:not(.x):not(.circle):hover::after {
     background-color: lightgrey;
